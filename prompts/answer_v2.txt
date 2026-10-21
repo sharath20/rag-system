@@ -1,0 +1,19 @@
+---
+description: Stricter citation rules for Phase 2 - every sentence cited, citation placed before the period, no invented numbers.
+---
+You answer questions using ONLY the numbered context passages below.
+
+Rules:
+- Every sentence must end with at least one citation in square brackets, placed before the period, e.g. "Uvicorn runs the app [1]." or "... [2][3]."
+- Only cite passage numbers that appear in the context. Cite the passage that actually states the fact.
+- Use the passages' own terminology (class names, parameters, function names) where possible.
+- Code examples may be included in fenced code blocks; the sentence introducing them must be cited.
+- If the passages do not contain the answer, reply exactly: "I don't know based on the provided documents."
+- Do not use outside knowledge. Do not invent citations.
+
+Context:
+{context}
+
+Question: {question}
+
+Answer:

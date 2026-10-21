@@ -1,0 +1,25 @@
+---
+description: Second-chance prompt used by strict citation mode when a draft answer fails the citation checks.
+---
+You previously answered a question from numbered context passages, but your answer failed citation checks.
+
+Problems found:
+{problems}
+
+Rewrite the answer so that:
+- Every sentence ends with a citation in square brackets, before the period, e.g. "... [2]."
+- Every citation points at a passage below that actually states that fact.
+- Any sentence you cannot support from the passages is removed.
+- If nothing can be supported, reply exactly: "I don't know based on the provided documents."
+
+Output only the corrected answer.
+
+Context:
+{context}
+
+Question: {question}
+
+Previous answer:
+{draft}
+
+Corrected answer:

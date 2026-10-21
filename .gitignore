@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Generated vector store (rebuild with: python -m rag.cli ingest)
+data/chroma/
+
+# Local secrets / editor
+.env
+.vscode/
+.idea/

@@ -1,0 +1,38 @@
+# Central config.
+ollama:
+  host: http://localhost:11434
+  chat_model: llama3.2
+  embed_model: nomic-embed-text
+  timeout: 300           # seconds; first chat call can be slow while the model loads
+
+chunking:
+  chunk_tokens: 650      # target 500-800
+  overlap_tokens: 100
+
+store:
+  path: ./data/chroma
+  collection: docs
+
+retrieval:
+  mode: hybrid           # vector | bm25 | hybrid
+  candidates: 20         # per-retriever pool fed into fusion + re-ranking
+  rrf_k: 60              # Reciprocal Rank Fusion constant
+  top_k: 5               # passages given to the LLM
+
+reranker:
+  enabled: true          # cross-encoder over the fused candidates (ONNX, downloads ~90MB on first use)
+  model: cross-encoder/ms-marco-MiniLM-L-6-v2
+  max_length: 512
+
+prompts:
+  dir: ./prompts
+  answer: answer@2       # pin an exact version; "answer@latest" picks the newest file
+
+citations:
+  strict: true           # answers failing the checks are repaired once, then refused
+  max_repairs: 1
+  repair_prompt: repair@1
+  min_support: 0.3       # min fraction of a sentence's content words found in its cited passages
+
+paths:
+  corpus_dir: ./data/corpus
