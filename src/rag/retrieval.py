@@ -30,12 +30,13 @@ def rrf_fuse(rankings: dict[str, list[Hit]], k: int = 60) -> list[Hit]:
 
 class HybridRetriever:
     def __init__(self, store: VectorStore, embedder, reranker=None, mode: str = "hybrid",
-                 candidates: int = 20, rrf_k: int = 60):
+                 candidates: int = 20, rrf_k: int = 60, rerank_pool: int = 20):
         if mode not in MODES:
             raise ValueError(f"mode must be one of {MODES}, got {mode!r}")
         self.store, self.embedder = store, embedder
         self.reranker = reranker or NoopReranker()
         self.mode, self.candidates, self.rrf_k = mode, candidates, rrf_k
+        self.rerank_pool = rerank_pool  # the cross-encoder dominates query latency on CPU
         self._bm25: BM25 | None = None
         self._bm25_chunks: list[Hit] = []
         self._bm25_count = -1
@@ -66,11 +67,11 @@ class HybridRetriever:
             rankings["vector"] = self._vector(question)
         if self.mode in ("bm25", "hybrid"):
             rankings["bm25"] = self._keyword(question)
-        candidates = rrf_fuse(rankings, self.rrf_k)
+        candidates = rrf_fuse(rankings, self.rrf_k)[: max(self.rerank_pool, top_k)]
         return self.reranker.rerank(question, candidates, top_k)
 
 
 def build_retriever(cfg: dict, store: VectorStore, embedder, reranker=None, mode: str | None = None) -> HybridRetriever:
     r = cfg["retrieval"]
     return HybridRetriever(store, embedder, reranker, mode or r.get("mode", "hybrid"),
-                           r.get("candidates", 20), r.get("rrf_k", 60))
+                           r.get("candidates", 20), r.get("rrf_k", 60), r.get("rerank_pool", 20))

@@ -11,3 +11,6 @@ data/chroma/
 .env
 .vscode/
 .idea/
+
+# Resumable partial eval runs
+eval/reports/.partial-*.jsonl

@@ -3,7 +3,9 @@ ollama:
   host: http://localhost:11434
   chat_model: llama3.2
   embed_model: nomic-embed-text
-  timeout: 300           # seconds; first chat call can be slow while the model loads
+  timeout: 900           # seconds per request; long answers can take the judge >5 min on CPU
+  num_ctx: 8192          # context window; Ollama's 4096 default truncates 5 passages + the repair prompt
+  num_predict: 1024      # max answer tokens; stops small models looping into endless output
 
 chunking:
   chunk_tokens: 650      # target 500-800
@@ -17,6 +19,7 @@ retrieval:
   mode: hybrid           # vector | bm25 | hybrid
   candidates: 20         # per-retriever pool fed into fusion + re-ranking
   rrf_k: 60              # Reciprocal Rank Fusion constant
+  rerank_pool: 20        # fused candidates scored by the cross-encoder (its cost is ~linear in this)
   top_k: 5               # passages given to the LLM
 
 reranker:
@@ -33,6 +36,26 @@ citations:
   max_repairs: 1
   repair_prompt: repair@1
   min_support: 0.3       # min fraction of a sentence's content words found in its cited passages
+  uncited_min_support: 0.6  # an uncited sentence passes only if this much of it is in passages cited elsewhere
 
 paths:
   corpus_dir: ./data/corpus
+
+eval:
+  golden: ./eval/golden.jsonl
+  report: ./eval/reports/latest.json
+  judge_model: llama3.2  # Ragas faithfulness judge; a larger model (e.g. qwen2.5:7b) judges better but slower
+  judge_num_predict: 1024
+  # Items the slow generation eval answers + judges (~4-5 min each on CPU). Covers all 13 docs
+  # plus 4 unanswerable questions. Remove this key to evaluate the whole golden set.
+  generation_ids: [bg-01, bg-03, body-01, body-04, cors-01, cors-03, dep-02, fs-01, err-01, sec-01,
+                   test-01, mw-01, pp-03, qv-01, qp-02, rm-02, none-01, none-04, none-06, none-08]
+  thresholds:            # CI fails the PR below these (changing them does not invalidate the report)
+    retrieval:           # measured live in CI; baseline 2026-10-26: 0.986 / 0.971 / 0.942
+      hit_rate: 0.95
+      mrr: 0.9
+      evidence_recall: 0.85
+    generation:          # read from the committed report; baseline 2026-10-26 (llama3.2 judge): 0.762 / 0.938 / 1.0
+      faithfulness: 0.7  # held down by llama3.2 judge misfires; re-judge with qwen2.5 to tighten
+      answer_rate: 0.85
+      abstain_rate: 0.75  # 4 unanswerable items, so one miss = 0.75

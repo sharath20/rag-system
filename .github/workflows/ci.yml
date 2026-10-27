@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+env:
+  PYTHONPATH: src
+
+jobs:
+  tests:
+    name: Unit tests + faithfulness gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: pytest -q
+      # The generation eval (answers + Ragas faithfulness) is too slow for CI, so it runs locally
+      # and is committed as eval/reports/latest.json. This fails if that report is stale (code,
+      # prompts, config, corpus or golden set changed since) or below eval.thresholds.generation.
+      - name: Faithfulness gate
+        run: python -m rag.cli eval gate
+
+  retrieval:
+    name: Retrieval quality gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Cache re-ranker model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-ms-marco-MiniLM-L-6-v2
+      - name: Install Ollama (embedding model only; no chat LLM needed)
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          if ! curl -sf http://localhost:11434 >/dev/null; then (ollama serve > /tmp/ollama.log 2>&1 &); fi
+          for i in $(seq 1 30); do curl -sf http://localhost:11434 >/dev/null && break; sleep 1; done
+          ollama pull nomic-embed-text
+      - run: python -m rag.cli ingest
+      - name: Retrieval gate (hit rate, MRR, evidence recall vs eval.thresholds.retrieval)
+        run: python -m rag.cli eval retrieval --gate

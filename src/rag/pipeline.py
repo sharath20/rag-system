@@ -56,9 +56,10 @@ def answer_question(question: str, store: VectorStore, client, cfg: dict,
     context = format_context(hits)
     cc = cfg.get("citations", {})
     strict, min_support = cc.get("strict", True), cc.get("min_support", 0.3)
+    uncited_min_support = cc.get("uncited_min_support", 0.6)
 
     def check(text: str) -> CitationReport:
-        return check_citations(text, [h.text for h in hits], min_support)
+        return check_citations(text, [h.text for h in hits], min_support, uncited_min_support=uncited_min_support)
 
     text = client.chat(prompt.render(context=context, question=question)).strip()
     report = check(text)

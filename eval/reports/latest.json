@@ -1,0 +1,1321 @@
+{
+  "created": "2026-10-26T16:45:16+00:00",
+  "fingerprint": "1a78c2d34ed480155ae0f54fe4c07da42dd445674d41ffb6bab8251321ee55ce",
+  "golden_size": 77,
+  "generation_ids": [
+    "bg-01",
+    "bg-03",
+    "body-01",
+    "body-04",
+    "cors-01",
+    "cors-03",
+    "dep-02",
+    "fs-01",
+    "err-01",
+    "mw-01",
+    "pp-03",
+    "qv-01",
+    "qp-02",
+    "rm-02",
+    "sec-01",
+    "test-01",
+    "none-01",
+    "none-04",
+    "none-06",
+    "none-08"
+  ],
+  "models": {
+    "chat": "llama3.2",
+    "embed": "nomic-embed-text",
+    "judge": "llama3.2",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  },
+  "prompt": "answer@2",
+  "retrieval_mode": "hybrid",
+  "retrieval": {
+    "metrics": {
+      "n": 69,
+      "hit_rate": 0.9855,
+      "mrr": 0.971,
+      "evidence_recall": 0.942
+    },
+    "rows": [
+      {
+        "id": "bg-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_background-tasks.md#0",
+          "fastapi_background-tasks.md#2",
+          "fastapi_middleware.md#0",
+          "fastapi_middleware.md#1",
+          "fastapi_response-model.md#2"
+        ]
+      },
+      {
+        "id": "bg-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_background-tasks.md#1",
+          "fastapi_background-tasks.md#2",
+          "fastapi_background-tasks.md#0",
+          "fastapi_background-tasks.md#3",
+          "fastapi_middleware.md#0"
+        ]
+      },
+      {
+        "id": "bg-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_background-tasks.md#1",
+          "fastapi_background-tasks.md#0",
+          "fastapi_dependencies.md#4",
+          "fastapi_background-tasks.md#2",
+          "fastapi_first-steps.md#5"
+        ]
+      },
+      {
+        "id": "bg-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_background-tasks.md#3",
+          "fastapi_background-tasks.md#1",
+          "fastapi_background-tasks.md#0",
+          "fastapi_background-tasks.md#2",
+          "fastapi_query-params-str-validations.md#4"
+        ]
+      },
+      {
+        "id": "bg-05",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_background-tasks.md#3",
+          "fastapi_background-tasks.md#2",
+          "fastapi_background-tasks.md#1",
+          "fastapi_background-tasks.md#0",
+          "fastapi_response-model.md#6"
+        ]
+      },
+      {
+        "id": "body-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_body.md#3",
+          "fastapi_body.md#0",
+          "fastapi_query-params-str-validations.md#8",
+          "fastapi_body.md#2",
+          "fastapi_body.md#1"
+        ]
+      },
+      {
+        "id": "body-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_body.md#0",
+          "fastapi_body.md#3",
+          "fastapi_body.md#2",
+          "fastapi_handling-errors.md#4",
+          "fastapi_handling-errors.md#3"
+        ]
+      },
+      {
+        "id": "body-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_body.md#3",
+          "fastapi_query-params.md#1",
+          "fastapi_query-params-str-validations.md#8",
+          "fastapi_query-params.md#0",
+          "fastapi_query-params-str-validations.md#2"
+        ]
+      },
+      {
+        "id": "body-05",
+        "rank": 1,
+        "evidence_found": false,
+        "retrieved": [
+          "fastapi_body.md#3",
+          "fastapi_body.md#0",
+          "fastapi_body.md#2",
+          "fastapi_response-model.md#1",
+          "fastapi_response-model.md#2"
+        ]
+      },
+      {
+        "id": "cors-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_cors.md#1",
+          "fastapi_middleware.md#1",
+          "fastapi_cors.md#0",
+          "fastapi_cors.md#2",
+          "fastapi_middleware.md#0"
+        ]
+      },
+      {
+        "id": "cors-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_cors.md#1",
+          "fastapi_cors.md#0",
+          "fastapi_cors.md#2",
+          "fastapi_middleware.md#1",
+          "fastapi_security_first-steps.md#4"
+        ]
+      },
+      {
+        "id": "cors-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_cors.md#1",
+          "fastapi_cors.md#0",
+          "fastapi_response-model.md#8",
+          "fastapi_query-params.md#1",
+          "fastapi_cors.md#2"
+        ]
+      },
+      {
+        "id": "cors-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_cors.md#1",
+          "fastapi_cors.md#2",
+          "fastapi_middleware.md#1",
+          "fastapi_query-params-str-validations.md#4",
+          "fastapi_query-params-str-validations.md#3"
+        ]
+      },
+      {
+        "id": "cors-05",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_cors.md#2",
+          "fastapi_middleware.md#1",
+          "fastapi_cors.md#0",
+          "fastapi_cors.md#1",
+          "fastapi_response-model.md#7"
+        ]
+      },
+      {
+        "id": "cors-06",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_cors.md#2",
+          "fastapi_cors.md#1",
+          "fastapi_middleware.md#1",
+          "fastapi_middleware.md#0",
+          "fastapi_cors.md#0"
+        ]
+      },
+      {
+        "id": "cors-07",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_cors.md#2",
+          "fastapi_cors.md#1",
+          "fastapi_middleware.md#1",
+          "fastapi_cors.md#0",
+          "fastapi_handling-errors.md#1"
+        ]
+      },
+      {
+        "id": "cors-08",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_cors.md#1",
+          "fastapi_query-params-str-validations.md#5",
+          "fastapi_cors.md#0",
+          "fastapi_query-params-str-validations.md#12",
+          "fastapi_path-params.md#2"
+        ]
+      },
+      {
+        "id": "dep-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_dependencies.md#5",
+          "fastapi_dependencies.md#0",
+          "fastapi_background-tasks.md#1",
+          "fastapi_security_first-steps.md#4",
+          "fastapi_dependencies.md#1"
+        ]
+      },
+      {
+        "id": "dep-02",
+        "rank": 1,
+        "evidence_found": false,
+        "retrieved": [
+          "fastapi_dependencies.md#5",
+          "fastapi_background-tasks.md#1",
+          "fastapi_dependencies.md#0",
+          "fastapi_dependencies.md#4",
+          "fastapi_security_first-steps.md#4"
+        ]
+      },
+      {
+        "id": "dep-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_dependencies.md#3",
+          "fastapi_dependencies.md#5",
+          "fastapi_dependencies.md#4",
+          "fastapi_dependencies.md#0",
+          "fastapi_handling-errors.md#1"
+        ]
+      },
+      {
+        "id": "dep-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_dependencies.md#3",
+          "fastapi_dependencies.md#1",
+          "fastapi_dependencies.md#2",
+          "fastapi_dependencies.md#4",
+          "fastapi_dependencies.md#0"
+        ]
+      },
+      {
+        "id": "dep-05",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_dependencies.md#4",
+          "fastapi_background-tasks.md#1",
+          "fastapi_dependencies.md#3",
+          "fastapi_first-steps.md#5",
+          "fastapi_dependencies.md#0"
+        ]
+      },
+      {
+        "id": "dep-06",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params-str-validations.md#1",
+          "fastapi_dependencies.md#1",
+          "fastapi_query-params-str-validations.md#9",
+          "fastapi_query-params-str-validations.md#2",
+          "fastapi_query-params-str-validations.md#7"
+        ]
+      },
+      {
+        "id": "dep-07",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_dependencies.md#0",
+          "fastapi_dependencies.md#5",
+          "fastapi_handling-errors.md#1",
+          "fastapi_dependencies.md#4",
+          "fastapi_dependencies.md#3"
+        ]
+      },
+      {
+        "id": "fs-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_first-steps.md#6",
+          "fastapi_background-tasks.md#0",
+          "fastapi_security_first-steps.md#1",
+          "fastapi_middleware.md#0",
+          "fastapi_first-steps.md#3"
+        ]
+      },
+      {
+        "id": "fs-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_first-steps.md#2",
+          "fastapi_security_first-steps.md#1",
+          "fastapi_security_first-steps.md#4",
+          "fastapi_response-model.md#5",
+          "fastapi_path-params.md#1"
+        ]
+      },
+      {
+        "id": "fs-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_first-steps.md#2",
+          "fastapi_security_first-steps.md#4",
+          "fastapi_query-params-str-validations.md#2",
+          "fastapi_path-params.md#5",
+          "fastapi_body.md#1"
+        ]
+      },
+      {
+        "id": "fs-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_first-steps.md#3",
+          "fastapi_first-steps.md#4",
+          "fastapi_middleware.md#0",
+          "fastapi_cors.md#1",
+          "fastapi_first-steps.md#5"
+        ]
+      },
+      {
+        "id": "fs-05",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_first-steps.md#5",
+          "fastapi_first-steps.md#4",
+          "fastapi_first-steps.md#6",
+          "fastapi_response-model.md#1",
+          "fastapi_query-params-str-validations.md#13"
+        ]
+      },
+      {
+        "id": "fs-06",
+        "rank": null,
+        "evidence_found": false,
+        "retrieved": [
+          "fastapi_path-params.md#2",
+          "fastapi_security_first-steps.md#4",
+          "fastapi_body.md#0",
+          "fastapi_response-model.md#5",
+          "fastapi_response-model.md#4"
+        ]
+      },
+      {
+        "id": "err-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_handling-errors.md#1",
+          "fastapi_handling-errors.md#0",
+          "fastapi_response-model.md#1",
+          "fastapi_testing.md#1",
+          "fastapi_handling-errors.md#2"
+        ]
+      },
+      {
+        "id": "err-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_handling-errors.md#1",
+          "fastapi_handling-errors.md#3",
+          "fastapi_handling-errors.md#2",
+          "fastapi_testing.md#3",
+          "fastapi_handling-errors.md#0"
+        ]
+      },
+      {
+        "id": "err-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_handling-errors.md#3",
+          "fastapi_handling-errors.md#4",
+          "fastapi_handling-errors.md#5",
+          "fastapi_handling-errors.md#1",
+          "fastapi_testing.md#3"
+        ]
+      },
+      {
+        "id": "err-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_handling-errors.md#2",
+          "fastapi_handling-errors.md#1",
+          "fastapi_handling-errors.md#3",
+          "fastapi_middleware.md#1",
+          "fastapi_handling-errors.md#5"
+        ]
+      },
+      {
+        "id": "err-05",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_handling-errors.md#3",
+          "fastapi_handling-errors.md#2",
+          "fastapi_handling-errors.md#4",
+          "fastapi_handling-errors.md#6",
+          "fastapi_handling-errors.md#5"
+        ]
+      },
+      {
+        "id": "err-06",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_handling-errors.md#5",
+          "fastapi_handling-errors.md#3",
+          "fastapi_handling-errors.md#4",
+          "fastapi_handling-errors.md#2",
+          "fastapi_handling-errors.md#6"
+        ]
+      },
+      {
+        "id": "err-07",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_handling-errors.md#5",
+          "fastapi_handling-errors.md#2",
+          "fastapi_handling-errors.md#3",
+          "fastapi_handling-errors.md#6",
+          "fastapi_cors.md#1"
+        ]
+      },
+      {
+        "id": "mw-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_middleware.md#0",
+          "fastapi_middleware.md#1",
+          "fastapi_cors.md#1",
+          "fastapi_handling-errors.md#2",
+          "fastapi_first-steps.md#4"
+        ]
+      },
+      {
+        "id": "mw-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_middleware.md#1",
+          "fastapi_middleware.md#0",
+          "fastapi_cors.md#1",
+          "fastapi_cors.md#2",
+          "fastapi_background-tasks.md#1"
+        ]
+      },
+      {
+        "id": "mw-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_middleware.md#0",
+          "fastapi_background-tasks.md#0",
+          "fastapi_background-tasks.md#2",
+          "fastapi_middleware.md#1",
+          "fastapi_background-tasks.md#3"
+        ]
+      },
+      {
+        "id": "mw-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_middleware.md#1",
+          "fastapi_handling-errors.md#1",
+          "fastapi_first-steps.md#2",
+          "fastapi_cors.md#2",
+          "fastapi_testing.md#4"
+        ]
+      },
+      {
+        "id": "pp-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_path-params.md#5",
+          "fastapi_path-params.md#3",
+          "fastapi_query-params.md#1",
+          "fastapi_path-params.md#0",
+          "fastapi_body.md#3"
+        ]
+      },
+      {
+        "id": "pp-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_path-params.md#1",
+          "fastapi_path-params.md#0",
+          "fastapi_query-params.md#1",
+          "fastapi_query-params.md#2",
+          "fastapi_body.md#3"
+        ]
+      },
+      {
+        "id": "pp-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_path-params.md#2",
+          "fastapi_query-params.md#2",
+          "fastapi_path-params.md#1",
+          "fastapi_response-model.md#4",
+          "fastapi_dependencies.md#5"
+        ]
+      },
+      {
+        "id": "pp-04",
+        "rank": 2,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params.md#1",
+          "fastapi_path-params.md#3",
+          "fastapi_response-model.md#8",
+          "fastapi_path-params.md#2",
+          "fastapi_dependencies.md#3"
+        ]
+      },
+      {
+        "id": "pp-05",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_path-params.md#5",
+          "fastapi_path-params.md#3",
+          "fastapi_path-params.md#0",
+          "fastapi_query-params.md#1",
+          "fastapi_body.md#3"
+        ]
+      },
+      {
+        "id": "qv-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params-str-validations.md#2",
+          "fastapi_query-params-str-validations.md#5",
+          "fastapi_query-params-str-validations.md#3",
+          "fastapi_query-params-str-validations.md#0",
+          "fastapi_query-params.md#0"
+        ]
+      },
+      {
+        "id": "qv-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params-str-validations.md#5",
+          "fastapi_query-params-str-validations.md#3",
+          "fastapi_query-params-str-validations.md#11",
+          "fastapi_query-params-str-validations.md#8",
+          "fastapi_query-params.md#1"
+        ]
+      },
+      {
+        "id": "qv-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params-str-validations.md#8",
+          "fastapi_query-params-str-validations.md#2",
+          "fastapi_query-params-str-validations.md#4",
+          "fastapi_query-params-str-validations.md#6",
+          "fastapi_query-params-str-validations.md#11"
+        ]
+      },
+      {
+        "id": "qv-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params-str-validations.md#11",
+          "fastapi_query-params-str-validations.md#2",
+          "fastapi_query-params-str-validations.md#6",
+          "fastapi_query-params-str-validations.md#8",
+          "fastapi_query-params-str-validations.md#3"
+        ]
+      },
+      {
+        "id": "qv-05",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params-str-validations.md#11",
+          "fastapi_query-params-str-validations.md#12",
+          "fastapi_query-params-str-validations.md#8",
+          "fastapi_query-params-str-validations.md#2",
+          "fastapi_body.md#3"
+        ]
+      },
+      {
+        "id": "qv-06",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params-str-validations.md#12",
+          "fastapi_body.md#1",
+          "fastapi_query-params-str-validations.md#9",
+          "fastapi_query-params-str-validations.md#3",
+          "fastapi_query-params-str-validations.md#2"
+        ]
+      },
+      {
+        "id": "qv-07",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params-str-validations.md#13",
+          "fastapi_query-params-str-validations.md#6",
+          "fastapi_query-params-str-validations.md#0",
+          "fastapi_query-params.md#0",
+          "fastapi_query-params-str-validations.md#1"
+        ]
+      },
+      {
+        "id": "qv-08",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params-str-validations.md#1",
+          "fastapi_query-params-str-validations.md#4",
+          "fastapi_query-params-str-validations.md#2",
+          "fastapi_query-params-str-validations.md#3",
+          "fastapi_query-params-str-validations.md#8"
+        ]
+      },
+      {
+        "id": "qp-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params.md#1",
+          "fastapi_query-params.md#2",
+          "fastapi_query-params-str-validations.md#11",
+          "fastapi_body.md#3",
+          "fastapi_response-model.md#7"
+        ]
+      },
+      {
+        "id": "qp-02",
+        "rank": 2,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_query-params-str-validations.md#6",
+          "fastapi_query-params.md#2",
+          "fastapi_body.md#1",
+          "fastapi_body.md#3",
+          "fastapi_query-params.md#1"
+        ]
+      },
+      {
+        "id": "rm-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_response-model.md#2",
+          "fastapi_response-model.md#1",
+          "fastapi_response-model.md#0",
+          "fastapi_path-params.md#0",
+          "fastapi_background-tasks.md#1"
+        ]
+      },
+      {
+        "id": "rm-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_response-model.md#2",
+          "fastapi_response-model.md#0",
+          "fastapi_response-model.md#6",
+          "fastapi_response-model.md#4",
+          "fastapi_response-model.md#5"
+        ]
+      },
+      {
+        "id": "rm-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_response-model.md#3",
+          "fastapi_response-model.md#2",
+          "fastapi_response-model.md#4",
+          "fastapi_response-model.md#5",
+          "fastapi_security_first-steps.md#2"
+        ]
+      },
+      {
+        "id": "rm-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_response-model.md#8",
+          "fastapi_response-model.md#9",
+          "fastapi_response-model.md#7",
+          "fastapi_query-params-str-validations.md#4",
+          "fastapi_query-params-str-validations.md#8"
+        ]
+      },
+      {
+        "id": "rm-05",
+        "rank": 1,
+        "evidence_found": false,
+        "retrieved": [
+          "fastapi_response-model.md#2",
+          "fastapi_response-model.md#8",
+          "fastapi_response-model.md#0",
+          "fastapi_response-model.md#9",
+          "fastapi_response-model.md#1"
+        ]
+      },
+      {
+        "id": "sec-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_security_first-steps.md#2",
+          "fastapi_security_first-steps.md#4",
+          "fastapi_security_first-steps.md#3",
+          "fastapi_security_first-steps.md#0",
+          "fastapi_security_first-steps.md#1"
+        ]
+      },
+      {
+        "id": "sec-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_security_first-steps.md#3",
+          "fastapi_security_first-steps.md#2",
+          "fastapi_security_first-steps.md#4",
+          "fastapi_security_first-steps.md#0",
+          "fastapi_security_first-steps.md#1"
+        ]
+      },
+      {
+        "id": "sec-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_security_first-steps.md#4",
+          "fastapi_security_first-steps.md#2",
+          "fastapi_security_first-steps.md#3",
+          "fastapi_security_first-steps.md#1",
+          "fastapi_security_first-steps.md#0"
+        ]
+      },
+      {
+        "id": "sec-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_security_first-steps.md#1",
+          "fastapi_security_first-steps.md#2",
+          "fastapi_security_first-steps.md#3",
+          "fastapi_security_first-steps.md#0",
+          "fastapi_security_first-steps.md#4"
+        ]
+      },
+      {
+        "id": "test-01",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_testing.md#1",
+          "fastapi_testing.md#0",
+          "fastapi_security_first-steps.md#1",
+          "fastapi_path-params.md#5",
+          "fastapi_first-steps.md#3"
+        ]
+      },
+      {
+        "id": "test-02",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_testing.md#6",
+          "fastapi_testing.md#0",
+          "fastapi_testing.md#1",
+          "fastapi_security_first-steps.md#1",
+          "fastapi_testing.md#4"
+        ]
+      },
+      {
+        "id": "test-03",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_testing.md#1",
+          "fastapi_testing.md#0",
+          "fastapi_testing.md#3",
+          "fastapi_dependencies.md#4",
+          "fastapi_background-tasks.md#1"
+        ]
+      },
+      {
+        "id": "test-04",
+        "rank": 1,
+        "evidence_found": true,
+        "retrieved": [
+          "fastapi_testing.md#6",
+          "fastapi_testing.md#5",
+          "fastapi_testing.md#4",
+          "fastapi_testing.md#0",
+          "fastapi_handling-errors.md#5"
+        ]
+      }
+    ]
+  },
+  "generation": {
+    "metrics": {
+      "n": 20,
+      "faithfulness": 0.7622,
+      "faithfulness_n": 13,
+      "answer_rate": 0.9375,
+      "abstain_rate": 1.0,
+      "judge_errors": 2
+    },
+    "rows": [
+      {
+        "id": "bg-01",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "You can run a task after returning a response in FastAPI by using the `add_task` method on the `BackgroundTasks` object, which is passed as a parameter to the path operation function [1].",
+        "cited": [
+          1
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_background-tasks.md#0",
+          "fastapi_background-tasks.md#2",
+          "fastapi_middleware.md#0",
+          "fastapi_middleware.md#1",
+          "fastapi_response-model.md#2"
+        ],
+        "faithfulness": 1.0,
+        "error": null,
+        "seconds": 10708.6
+      },
+      {
+        "id": "bg-03",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "Yes, a background task function can be a normal `def` instead of `async def`. According to the context, \"It can be an `async def` or normal `def` function, FastAPI will know how to handle it correctly.\" [1]",
+        "cited": [
+          1
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_background-tasks.md#1",
+          "fastapi_background-tasks.md#0",
+          "fastapi_dependencies.md#4",
+          "fastapi_background-tasks.md#2",
+          "fastapi_first-steps.md#5"
+        ],
+        "faithfulness": 1.0,
+        "error": null,
+        "seconds": 267.8
+      },
+      {
+        "id": "body-01",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "To declare a request body in FastAPI, you use Pydantic models with all their power and benefits [2]. First, you need to import `BaseModel` from `pydantic` [2]. Then, you declare your data model as a class that inherits from `BaseModel`. Use standard Python types for all the attributes: [5]. To add it to your path operation, declare it the same way you declared path and query parameters [5]. With just that Python type declaration, FastAPI will read the body of the request as JSON, convert the corresponding types (if needed), validate the data, and give you the received data in the parameter `item` [5].",
+        "cited": [
+          2,
+          5
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_body.md#3",
+          "fastapi_body.md#0",
+          "fastapi_query-params-str-validations.md#8",
+          "fastapi_body.md#2",
+          "fastapi_body.md#1"
+        ],
+        "faithfulness": 0.0,
+        "error": null,
+        "seconds": 324.3
+      },
+      {
+        "id": "body-04",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "According to [1], FastAPI decides whether a function parameter is a path parameter, a query parameter, or the request body based on the parameter's type and its declaration in the function signature. If the parameter is declared to be of a Pydantic model type, it is interpreted as a request body. If the parameter is of a singular type (like int, float, str, bool, etc.), it is interpreted as a query parameter. If the parameter is declared to be of the type of a Pydantic model and is also declared in the path, it is used as a path parameter.",
+        "cited": [
+          1
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_body.md#3",
+          "fastapi_query-params.md#1",
+          "fastapi_query-params-str-validations.md#8",
+          "fastapi_query-params.md#0",
+          "fastapi_query-params-str-validations.md#2"
+        ],
+        "faithfulness": 0.9090909090909091,
+        "error": null,
+        "seconds": 330.5
+      },
+      {
+        "id": "cors-01",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "To enable CORS in a FastAPI app, you need to add the CORSMiddleware to your application, specifying the allowed origins, methods, headers, and credentials [1]. \n\nHere's an example:\n```python\nfrom fastapi import FastAPI\nfrom fastapi.middleware.cors import CORSMiddleware\n\napp = FastAPI()\n\norigins = [\n    \"http://localhost.tiangolo.com\",\n    \"https://localhost.tiangolo.com\",\n    \"http://localhost\",\n    \"http://localhost:8080\",\n]\n\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=origins,\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\n```\nThis will enable CORS for all the specified origins, methods, and headers.",
+        "cited": [
+          1
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_cors.md#1",
+          "fastapi_middleware.md#1",
+          "fastapi_cors.md#0",
+          "fastapi_cors.md#2",
+          "fastapi_middleware.md#0"
+        ],
+        "faithfulness": 1.0,
+        "error": null,
+        "seconds": 341.3
+      },
+      {
+        "id": "cors-03",
+        "answerable": true,
+        "answered": false,
+        "refused_by_strict_check": false,
+        "decision_correct": false,
+        "answer": "I don't know based on the provided documents.",
+        "cited": [],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_cors.md#1",
+          "fastapi_cors.md#0",
+          "fastapi_response-model.md#8",
+          "fastapi_query-params.md#1",
+          "fastapi_cors.md#2"
+        ],
+        "faithfulness": null,
+        "error": null,
+        "seconds": 61.8
+      },
+      {
+        "id": "dep-02",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "You declare a dependency in a path operation function by using the `Depends` parameter, like this:\n\n```python\n@app.get(\"/items/\")\nasync def read_items(\n    commons: Annotated[dict, Depends(common_parameters)]\n):\n    return commons\n```\n\n[4]",
+        "cited": [
+          4
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_dependencies.md#5",
+          "fastapi_background-tasks.md#1",
+          "fastapi_dependencies.md#0",
+          "fastapi_dependencies.md#4",
+          "fastapi_security_first-steps.md#4"
+        ],
+        "faithfulness": 1.0,
+        "error": null,
+        "seconds": 336.9
+      },
+      {
+        "id": "fs-01",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "You can run the FastAPI development server using the command `fastapi dev` [1].",
+        "cited": [
+          1
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_first-steps.md#6",
+          "fastapi_background-tasks.md#0",
+          "fastapi_security_first-steps.md#1",
+          "fastapi_middleware.md#0",
+          "fastapi_first-steps.md#3"
+        ],
+        "faithfulness": 1.0,
+        "error": null,
+        "seconds": 199.7
+      },
+      {
+        "id": "err-01",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "You can raise an HTTPException with a status code of 404 to return a 404 error from a path operation [1].",
+        "cited": [
+          1
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_handling-errors.md#1",
+          "fastapi_handling-errors.md#0",
+          "fastapi_response-model.md#1",
+          "fastapi_testing.md#1",
+          "fastapi_handling-errors.md#2"
+        ],
+        "faithfulness": 1.0,
+        "error": null,
+        "seconds": 251.9
+      },
+      {
+        "id": "mw-01",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "To create a custom middleware in FastAPI, you use the `@app.middleware()` decorator on top of a function. The middleware function receives the `request` and a `call_next` function that will receive the `request` as a parameter [1]. This function will pass the `request` to the corresponding `path operation` [1]. Then it returns the `response` generated by the corresponding `path operation` [1]. You can then further modify the `response` before returning it [1].\n\nHere is an example:\n```python\nfrom fastapi import FastAPI, Request\napp = FastAPI()\n\n@app.middleware(\"http\")\nasync def add_process_time_header(request: Request, call_next):\n    start_time = time.perf_counter()\n    response = await call_next(request)\n    process_time = time.perf_counter() - start_time\n    response.headers[\"X-Process-Time\"] = str(process_time)\n    return response\n```\nThis code creates a middleware that adds a custom header \"X-Process-Time\" to every response with the time it took to process the request [2].",
+        "cited": [
+          1,
+          2
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_middleware.md#0",
+          "fastapi_middleware.md#1",
+          "fastapi_cors.md#1",
+          "fastapi_handling-errors.md#2",
+          "fastapi_first-steps.md#4"
+        ],
+        "faithfulness": 0.0,
+        "error": null,
+        "seconds": 595.7
+      },
+      {
+        "id": "pp-03",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "Because path operations are evaluated in order, you need to make sure that the path for /users/me is declared before the one for /users/{user_id} [4].",
+        "cited": [
+          4
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_path-params.md#2",
+          "fastapi_query-params.md#2",
+          "fastapi_path-params.md#1",
+          "fastapi_response-model.md#4",
+          "fastapi_dependencies.md#5"
+        ],
+        "faithfulness": 1.0,
+        "error": null,
+        "seconds": 297.3
+      },
+      {
+        "id": "qv-01",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "To limit a query parameter to a maximum of 50 characters, you can use the `max_length` parameter in the `Query` function, like this:\n\n```python\nfrom fastapi import FastAPI, Query\napp = FastAPI()\n@app.get(\"/items/\")\nasync def read_items(q: Annotated[str | None, Query(max_length=50)] = None):\n    # ...\n```\n\nThis will validate the length of the `q` parameter and show an error if it exceeds 50 characters. [4]",
+        "cited": [
+          4
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_query-params-str-validations.md#2",
+          "fastapi_query-params-str-validations.md#5",
+          "fastapi_query-params-str-validations.md#3",
+          "fastapi_query-params-str-validations.md#0",
+          "fastapi_query-params.md#0"
+        ],
+        "faithfulness": 0.0,
+        "error": null,
+        "seconds": 532.1
+      },
+      {
+        "id": "qp-02",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "To make a query parameter required, you can simply not declare a default value for it [2].",
+        "cited": [
+          2
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_query-params-str-validations.md#6",
+          "fastapi_query-params.md#2",
+          "fastapi_body.md#1",
+          "fastapi_body.md#3",
+          "fastapi_query-params.md#1"
+        ],
+        "faithfulness": 1.0,
+        "error": null,
+        "seconds": 269.1
+      },
+      {
+        "id": "rm-02",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "According to [1], if you declare both a return type and a response_model, the response_model will take priority and be used by FastAPI.",
+        "cited": [
+          1
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_response-model.md#2",
+          "fastapi_response-model.md#0",
+          "fastapi_response-model.md#6",
+          "fastapi_response-model.md#4",
+          "fastapi_response-model.md#5"
+        ],
+        "faithfulness": 1.0,
+        "error": null,
+        "seconds": 284.3
+      },
+      {
+        "id": "sec-01",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "To require an OAuth2 bearer token on an endpoint, you can use the `OAuth2PasswordBearer` class from FastAPI's security module, and pass the `tokenUrl` parameter to it [1]. This parameter specifies the URL that the client (the frontend running in the user's browser) will use to send the `username` and `password` in order to get a token [1].\n\nFor example:\n```python\nfrom fastapi import Depends\nfrom fastapi.security import OAuth2PasswordBearer\nfrom fastapi import HTTPException\n\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\n\n@app.get(\"/items/\")\nasync def read_items(token: str = Depends(oauth2_scheme)):\n    return {\"token\": token}\n```\nThis code defines an endpoint `/items/` that requires an OAuth2 bearer token to be passed in the `Authorization` header [2]. The `Depends` function is used to specify that the `token` parameter should be validated using the `oauth2_scheme` instance [2].\n\nYou can also use the `Annotated` version if possible, as it provides more type safety [3]. For example:\n```python\nfrom fastapi import Depends\nfrom fastapi.security import OAuth2PasswordBearer\nfrom fastapi import HTTPException\nfrom typing import Annotated\n\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\n\n@app.get(\"/items/\")\nasync def read_items(token: Annotated[str, Depends(oauth2_scheme)]):\n    return {\"token\": token}\n```\nThis code defines an endpoint `/items/` that requires an OAuth2 bearer token to be passed in the `Authorization` header [4]. The `Depends` function is used to specify that the `token` parameter should be validated using the `oauth2_scheme` instance [4].\n\nNote that the `tokenUrl` parameter specifies the URL that the client will use to send the `username` and `password` in order to get a token [5]. This URL is used to send the request to the API to obtain the token.\n\nAlso, the `Depends` function is used to specify that the `token` parameter should be validated using the `oauth2_scheme` instance [3]. This allows FastAPI to integrate the security scheme with OpenAPI and provide automatic API documentation.\n\nIn summary, to require an OAuth2 bearer token on an endpoint, you can use the `OAuth2PasswordBearer` class from FastAPI's security module, and pass the `tokenUrl` parameter to it. This parameter specifies the URL that the client will use to send the `username` and `password` in order to get a token. The `Depends` function is used to specify that the `token` parameter should be validated using the `oauth2_scheme` instance.",
+        "cited": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_security_first-steps.md#2",
+          "fastapi_security_first-steps.md#4",
+          "fastapi_security_first-steps.md#3",
+          "fastapi_security_first-steps.md#0",
+          "fastapi_security_first-steps.md#1"
+        ],
+        "faithfulness": null,
+        "error": "faithfulness: ReadTimeout: ",
+        "seconds": 708.3
+      },
+      {
+        "id": "test-01",
+        "answerable": true,
+        "answered": true,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "You can test a FastAPI application using the `TestClient` object, which is part of the `fastapi.testclient` module [2]. To use `TestClient`, you need to install `httpx` and import `TestClient` from `fastapi.testclient` [2]. \n\nHere's an example of how to create a `TestClient` object and use it to test a FastAPI application:\n\n```python\nfrom fastapi.testclient import TestClient\napp = FastAPI()\n\n@app.get(\"/\")\nasync def read_root():\n    return {\"message\": \"Hello World\"}\n\nclient = TestClient(app)\n\nresponse = client.get(\"/\")\nassert response.status_code == 200\nassert response.json() == {\"message\": \"Hello World\"}\n```\n\nIn this example, we create a `TestClient` object by passing our FastAPI application to it. We then use the `client` object to send a GET request to the root URL of our application, and assert that the response status code is 200 and the response JSON is as expected.",
+        "cited": [
+          2
+        ],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_testing.md#1",
+          "fastapi_testing.md#0",
+          "fastapi_security_first-steps.md#1",
+          "fastapi_path-params.md#5",
+          "fastapi_first-steps.md#3"
+        ],
+        "faithfulness": null,
+        "error": "faithfulness: ReadTimeout: ",
+        "seconds": 475.1
+      },
+      {
+        "id": "none-01",
+        "answerable": false,
+        "answered": false,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "I don't know based on the provided documents.",
+        "cited": [],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_first-steps.md#5",
+          "fastapi_first-steps.md#4",
+          "fastapi_testing.md#1",
+          "fastapi_query-params-str-validations.md#9",
+          "fastapi_security_first-steps.md#1"
+        ],
+        "faithfulness": null,
+        "error": null,
+        "seconds": 119.7
+      },
+      {
+        "id": "none-04",
+        "answerable": false,
+        "answered": false,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "I don't know based on the provided documents.",
+        "cited": [],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_cors.md#1",
+          "fastapi_security_first-steps.md#1",
+          "fastapi_middleware.md#1",
+          "fastapi_middleware.md#0",
+          "fastapi_background-tasks.md#3"
+        ],
+        "faithfulness": null,
+        "error": null,
+        "seconds": 103.8
+      },
+      {
+        "id": "none-06",
+        "answerable": false,
+        "answered": false,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "I don't know based on the provided documents.",
+        "cited": [],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_dependencies.md#3",
+          "fastapi_dependencies.md#4",
+          "fastapi_dependencies.md#1",
+          "fastapi_dependencies.md#2",
+          "fastapi_query-params.md#1"
+        ],
+        "faithfulness": null,
+        "error": null,
+        "seconds": 112.1
+      },
+      {
+        "id": "none-08",
+        "answerable": false,
+        "answered": false,
+        "refused_by_strict_check": false,
+        "decision_correct": true,
+        "answer": "I don't know based on the provided documents.",
+        "cited": [],
+        "prompt_id": "answer@2#5f32a5f8",
+        "sources": [
+          "fastapi_first-steps.md#6",
+          "fastapi_cors.md#2",
+          "fastapi_dependencies.md#2",
+          "fastapi_path-params.md#4",
+          "fastapi_dependencies.md#1"
+        ],
+        "faithfulness": null,
+        "error": null,
+        "seconds": 82.2
+      }
+    ]
+  }
+}

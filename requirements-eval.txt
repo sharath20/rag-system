@@ -1,0 +1,8 @@
+# Extra dependencies for `python -m rag.cli eval run` (Ragas faithfulness). Not needed by CI.
+# Ragas 0.4.3 imports modules that LangChain 1.x removed, so LangChain is pinned to 0.3.x.
+-r requirements.txt
+ragas==0.4.3
+langchain<1
+langchain-core<1
+langchain-community<0.4
+langchain-openai<1

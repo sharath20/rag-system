@@ -2,7 +2,9 @@
 
 An answer passes only if:
   1. every citation number points at a retrieved passage,
-  2. every substantive sentence carries at least one citation, and
+  2. every substantive sentence carries at least one citation, unless it is a
+     summary that the passages cited elsewhere in the answer clearly support
+     (e.g. "Yes, X can be Y. The docs say 'X can be Y' [1]."), and
   3. each cited sentence is lexically supported by its cited passages
      (enough of its content words appear in them).
 
@@ -91,7 +93,7 @@ def sentences(text: str) -> list[str]:
 
 
 def check_citations(answer: str, passages: list[str], min_support: float = 0.3,
-                    min_words: int = 4) -> CitationReport:
+                    min_words: int = 4, uncited_min_support: float = 0.6) -> CitationReport:
     cited = extract_citations(answer)
     invalid = [n for n in cited if n < 1 or n > len(passages)]
     if answer.strip().rstrip(".") == NO_ANSWER.rstrip("."):
@@ -99,13 +101,19 @@ def check_citations(answer: str, passages: list[str], min_support: float = 0.3,
 
     report = CitationReport(cited, invalid)
     passage_words = [_content_words(p) for p in passages]
+    valid = [n for n in cited if 1 <= n <= len(passages)]
+    answer_cited_words = set().union(*(passage_words[n - 1] for n in valid)) if valid else set()
     for s in sentences(answer):
         words = _content_words(s)
         refs = [n for n in extract_citations(s) if 1 <= n <= len(passages)]
         if len(words) < min_words or s.endswith(":"):
             continue  # connective text, list lead-ins, headings
         if not _CITE.search(s):
-            report.uncited.append(s)
+            # An uncited sentence passes only with a higher bar than a cited one, measured against
+            # the passages the answer does cite: a restated claim, not a new one.
+            support = len(words & answer_cited_words) / len(words)
+            if support < uncited_min_support:
+                report.uncited.append(s)
             continue
         if not refs:
             continue  # only invalid citations; already reported

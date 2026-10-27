@@ -13,4 +13,7 @@ def load_config(path: str | Path | None = None) -> dict:
     cfg["store"]["path"] = str((ROOT / cfg["store"]["path"]).resolve())
     cfg["paths"]["corpus_dir"] = str((ROOT / cfg["paths"]["corpus_dir"]).resolve())
     cfg["prompts"]["dir"] = str((ROOT / cfg["prompts"]["dir"]).resolve())
+    if "eval" in cfg:
+        for key in ("golden", "report"):
+            cfg["eval"][key] = str((ROOT / cfg["eval"][key]).resolve())
     return cfg

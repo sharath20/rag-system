@@ -119,6 +119,23 @@ def test_citation_report_flags_uncited_sentence():
     assert r.uncited == ["It also compiles Rust code for speed."]
 
 
+def test_uncited_summary_backed_by_cited_passage_passes():
+    # Real llama3.2 answer from the Phase 3 eval (bg-03) that strict mode used to refuse.
+    passages = ["It can be an async def or normal def function, FastAPI will know how to handle it correctly. "
+                "Create a function to be run as the background task."]
+    answer = ("A background task function can be a normal `def` instead of `async def`. According to the "
+              "documentation, \"It can be an `async def` or normal `def` function, FastAPI will know how to "
+              "handle it correctly.\" [1]")
+    assert check_citations(answer, passages).ok
+
+
+def test_uncited_new_claim_still_fails_even_next_to_a_good_citation():
+    answer = ("Uvicorn is the ASGI server that runs FastAPI applications [1]. "
+              "Gunicorn workers should equal twice the number of CPU cores.")
+    r = check_citations(answer, PASSAGES)
+    assert not r.ok and r.uncited == ["Gunicorn workers should equal twice the number of CPU cores."]
+
+
 def test_citation_report_flags_wrong_passage():
     r = check_citations("Uvicorn is the ASGI server that runs FastAPI applications [3].", PASSAGES)
     assert not r.ok and r.unsupported[0].cited == [3]
